@@ -1,0 +1,13 @@
+ <view class="goods-item">
+ <image src="{{item.image}}" class="image" mode="widthFix"></image>
+ <view class="desc-info">
+ <view class="title">{{item.title}}</view>
+ <view class="info">
+  <text class="price">￥59.00</text>
+  <image class="icon" src="/assets/images/common/favor.png"></image>
+  <text class="cfav">47</text>
+ </view>
+ </view>
+ 
+ </view>
+ 

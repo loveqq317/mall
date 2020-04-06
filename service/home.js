@@ -4,3 +4,11 @@ export function getMutiData(){
     url:'/mini/mall/mutidata'
   })
 }
+export function getGoodsData(type,page){
+  return request({
+    url:'/mini/mall/mutidata',
+    data:{
+      type,page
+    }
+  })
+}
