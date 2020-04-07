@@ -10,8 +10,8 @@
   text-align: center;
 }
 .recommend-item image{
-  width: 160rpx;
-  height: 160rpx;
+  width: 150rpx;
+  height: 150rpx;
 }
 .recommend-item view{
   font-size: 30rpx;

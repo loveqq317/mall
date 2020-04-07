@@ -16,7 +16,9 @@ Page({
       sell:{page:0,list:[]}
     },
     currentType:'pop',
-    showBackTop:false
+    showBackTop:false,
+    isTabFixed:false,
+    tabScrollTop:0
   },
 
   /**
@@ -75,6 +77,13 @@ Page({
       currentType:type
     })
   },
+  handleImageLoad(){
+    wx.createSelectorQuery().select('#tab-control').boundingClientRect(rect=>{
+      this.setData({
+        tabScrollTop:rect.top
+      })
+    }).exec()
+  },
    //-------------------事件封装-----------------------------
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -124,5 +133,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  onPageScroll(options){  
+    const scrollTop=options.scrollTop;
+    const flag=scrollTop>=367
+    if(flag != this.data.showBackTop){
+      console.log(options)
+      this.setData({
+        showBackTop:flag
+      })
+    } 
+    //修改isTabFixed属性
+    const flag2=scrollTop>= this.data.tabScrollTop
+    if(flag2 != this.data.isTabFixed){
+        this.setData({
+          isTabFixed:flag2
+        })
+    }
   }
 })
